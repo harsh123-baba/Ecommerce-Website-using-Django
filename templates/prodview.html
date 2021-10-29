@@ -1,0 +1,35 @@
+{% extends 'header.html' %}
+{% block title %} {{prod.product_name}} -- My Awesome Cart{% endblock %}
+{% block content %}
+<div class="container my-4">
+    <div class="row" style="display: flex;">
+        <div class="col-md-4">
+                <img src="/media/{{prod.product_img}}" width="333px" height="385px">
+        </div>        
+        <div class="col-md-8">
+            <h3>{{prod.product_name}}</h3>
+            <p style="color: rgb(124, 40, 40);"><b>INR {{prod.product_price}}</b></p>
+            <p>{{prod.product_description}}</p>
+
+            {% if prod.stock >= 25 %}
+                <button class='btn btn-primary update-cart' data-action ="add" data-product = "{{prod.id}}">Add To Cart</button>
+                <button class='btn btn-primary'>Buy Now</button>
+            
+            {% elif prod.stock < 25%}
+
+            <b class="fewareleft"> Hurry up Few are left</b>    
+            <br>
+            <button class='btn btn-primary update-cart' data-action ="add" data-product = "{{prod.id}}">Add To Cart</button>
+            <button class='btn btn-primary'>Buy Now</button>
+        
+            {% else %}
+                <b class= "outofstock">Out of Stock</b>
+            {% endif %}
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

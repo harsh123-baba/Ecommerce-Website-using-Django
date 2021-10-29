@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    background-color: rgb(245, 216, 164);
+    margin: 0;
+    padding: 0;
+}
+
+
+.col-md-3 {
+    display: inline-block;
+    margin-left: -4px;
+    /* width: 100%;
+    height: auto; */
+    }
+
+.carousel-indicators .active {
+    background-color: rgb(255, 255, 255);
+}
+
+.col-md-3 img {
+    width: 227px;
+    height: 242px;
+} 
+
+body .carousel-indicator li {
+    background-color: rgb(0, 0, 0);
+}
+
+body .carousel-indicators {
+    bottom: 0;
+}
+
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon {
+    margin-bottom: 100%;
+    background-color: rgb(0, 0, 0);
+    margin-top: -125%;
+    color: black;
+}
+
+.carousel-control-prev, .carousel-control-next{
+    top: auto;
+    bottom: auto;
+}
+
+body .no-padding {
+    padding-left: 0;
+    padding-right:0;
+} 
+
+
+.form{
+    border: 2px solid blc;
+}
+
+.cart-row{
+    display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom:8px solid #ececec;
+}
+
+.cart-img{
+    width: 150px;
+    margin-left: 15px;
+    height: 125px;
+}
+
+.quantity{
+    display: inline-block;
+	font-weight: 700;
+	padding-right:10px;
+}
+.chg-quantity{
+	width: 14px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
+	margin-top: 10px;
+}
+
+
+
+#cart-total{
+	color:#fff;
+	background-color: red;
+	width: 20px;
+	height: 25px;
+	border-radius: 50%;
+	font-size: 14px;
+}
+
+
+
+.box-element{
+    box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.col-lg-2{
+    margin-right: 0px;
+}
+
+.outofstock{
+    color: red;
+}
+.fewareleft{
+    color: rgb(34, 100, 34);
+}

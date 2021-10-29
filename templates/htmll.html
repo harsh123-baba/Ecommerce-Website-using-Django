@@ -1,0 +1,140 @@
+
+<!-- 
+<body>
+    {% block content %}
+    {% for product in allprod %}
+    <div class="container">
+        <h2 id="heading">{{product.0.product_category}}</h2>
+        <div class="box">
+            {% for i in product %}
+            <div class="card">
+                <img id='img' src="/media/{{i.product_img}}" alt="Product is not loaded">
+                <h1>{{ i.product_name }}</h1>
+                INR<p class="price">{{ i.product_price }}</p>
+                <p>{{ i.product_description|slice:"0:50" }}...</p>
+                <button class='btn btn-primary' id='pr{{i.id}}' class="cart">Add To Cart</button>
+                <a href="prodview/{{i.id}}"><button class='btn btn-primary'>Quick View</button></a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    {% endblock %}
+
+</body>
+{% block js %}
+<script src="{% static 'js/script.js' %}"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+{% endblock %}
+
+</html> -->
+
+
+
+
+<Header>
+
+
+
+</Header>
+
+
+
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block  title %} {% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+        <header>
+            <nav>
+        
+                <ul class='navigate'>
+                    <li><a class = "a" href="{% url 'shop:index' %}">Home</a></li>
+                    <li><a class = "a" href="{% url 'shop:about' %}">About Us</a></li>
+                    <li><a class = "a" href="{% url 'shop:contact' %}">Contact Us</a></li>
+                    <li><a class = "a" href="{% url 'shop:tracker' %}">Tracker</a></li>                    
+                    <input type="text" placeholder="Search">
+                    <button id = "search">Search</button>
+                    <button>Cart(<span id="cart" style="background-color: #18415d;">0</span>)</button>                    
+                    <li><a class = 'login a' href="{% url 'accounts:login' %}">Login/Register</a></li>
+                </ul>
+            </nav>
+        </header>
+{% block content %}
+
+{% endblock %}
+
+
+
+</body>
+{% block js%}
+{% endblock %}
+</html> -->
+
+
+
+
+
+<!-- {% block js%}
+<script>
+
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    }
+    else {
+        cart = JSON.parse(localStorage.getItem('cart'))
+        updatecart(cart)
+    }
+
+    function updatecart(cart) {
+        var sum = 0;
+        for (var item in cart){
+            sum+=cart[item];
+        }
+        document.getElementById('cart').innerHTML = sum;
+    }
+    $('.cart').click(function () {
+        console.log("Clicked")
+        var idStr = this.id.toString();
+        if (cart[idStr] != undefined) {
+            cart[idStr] = cart[idStr] + 1;
+        }
+        else {
+            cart[idStr] = 1;
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // for(var i=0; i<Object.values(cart).length;i++){
+        //     total+=Object.values(cart)[i];
+        // }
+        // console.log(total);
+
+        // function updatecart(cart) {
+            
+        // }
+
+    });
+ -->

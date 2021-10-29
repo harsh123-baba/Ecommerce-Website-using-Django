@@ -1,0 +1,101 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block title %}
+Index page
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container" xmlns:data="http://www.w3.org/1999/xhtml">
+    {% for product, range, nslides in allProds %}
+    <h3 class="my-4">{{product.0.product_category}}</h3>
+    <hr>
+    <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">'
+        <ul class="carousel-indicators">
+            <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
+            {% for i in range %}
+            <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
+            {% endfor %}
+        </ul>
+
+
+        <div class="container carousel-inner no-padding">
+            <div class="carousel-item active">
+
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="card box-element" style="width: 18rem;">
+                        <img src='{{product.0.imageUrl}}' class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.0.product_name}}</h5>
+                            <h5 class="price" style="color: rgb(202, 86, 86);"><b>INR {{product.0.product_price}}</b></h5>
+
+                            <p class="card-text">{{product.0.product_description|slice:"0:30"}}...</p>
+                            <span id="divpr{{product.0.id}}"> 
+                                 <button class='btn btn-primary update-cart' data-product = "{{product.0.id}}" data-action="add" id='{{product.0.id}}' >Add To Cart</button>
+                            <a href="/prodview/{{product.0.id}}"><button class='btn btn-primary' id='qv{{product.0.id}}'>QuickView</button></a>
+                            </span>
+                        </div>
+                    </div>
+                </div> 
+
+
+                {% for i in product|slice:"1:" %}
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="card box-element" style="width: 18rem;">
+                        <img src='{{i.imageUrl}}' class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{i.product_name}}</h5>
+                            <h5 class="price" style="color: rgb(202, 86, 86);"><b>INR {{i.product_price}}</b></h5>
+                            <p class="card-text">{{i.product_description|slice:"0:30"}}...</p>
+                            
+                            {% if i.stock >= 25 %}
+                            <span id="divpr{{i.id}}">
+                            <button class='btn btn-primary update-cart' data-product="{{i.id}}" id='{{i.id}}' data-action="add">Add To Cart</button>    
+                            </span>
+                            {% elif i.stock < 25%}
+
+                                <b class="fewareleft"> Hurry up Few are left</b>    
+                                <br>
+                                <span id="divpr{{i.id}}">
+                                    <button class='btn btn-primary update-cart' data-product="{{i.id}}" id='{{i.id}}' data-action="add">Add To Cart</button>    
+                                </span>
+
+                            {% else %}
+                                <b class="outofstock"> out of stock </b>
+                            {% endif %}
+                            <a href="/prodview/{{i.id}}"><button class='btn btn-primary' id='qv{{i.id}}'>QuickView</button></a>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+            </div>
+            <div class="carousel-item">
+                {% endif %}
+
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+    <a class="carousel-control-prev " href="#demo{{forloop.counter}}" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+    </a>
+    <a class="carousel-control-next" href="#demo{{forloop.counter}}" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+    {% endfor %}
+
+</div>  
+
+{% endblock %}
+
+
+

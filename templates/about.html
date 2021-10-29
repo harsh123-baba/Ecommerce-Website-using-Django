@@ -1,0 +1,96 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block title %}
+About us
+{% endblock%}
+{% block content %}
+<style>
+.column {
+  width: 30%;
+  height: 50%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+<div class="about-section">
+    <h1>About Us Page</h1>
+    <p>My Bloody Cart is an Indian e-commerce company, headquartered in Bangalore, Karnataka, India, and incorporated in Singapore as
+    a private limited company.[6] The company initially focused on online book sales before expanding into other product
+    categories such as consumer electronics, fashion, home essentials, groceries, and lifestyle products.
+    
+    The service competes primarily with Amazon's Indian subsidiary and domestic rival Snapdeal.[7][8] As of March 2017,
+    Flipkart held a 39.5% market share of India's e-commerce industry.[9] Flipkart has a dominant position in the apparel
+    segment, bolstered by its acquisition of Myntra, and was described as being "neck and neck" with Amazon in the sale of
+    electronics and mobile phones.[10] Flipkart also owns PhonePe, a mobile payments service based on the Unified Payments
+    Interface.
+    
+    In August 2018, U.S.-based retail chain Walmart acquired a 77% controlling stake in Flipkart for US$16 billion, valuing
+    Flipkart at around $20 billion.[11]</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <img src="{% static 'img/h.jpg' %}" alt="Jane">
+            <div class="container">
+                <h2>Harshit Goyal</h2>
+                <p class="title">CEO & Founder</p>
+                <p>From Baran</p>
+                <p>harshitgoyal213@gmail.com</p>
+                <p><button class="button">Contact</button></p>
+            </div>
+        </div>
+    </div>
+
+{% endblock%}
+
