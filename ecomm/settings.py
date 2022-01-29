@@ -3,7 +3,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'django-insecure-&eiqhun^=_9x#^)p2o&&mhh6e3sly15)p^_af_#pf5)f-(zx6r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -62,7 +62,7 @@ WSGI_APPLICATION = 'ecomm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecomm',
+        'NAME': 'ecmm',
         'USER':'root',
         'PASSWORD':'',
         'HOST':'localhost',
